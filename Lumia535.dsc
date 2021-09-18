@@ -39,28 +39,28 @@
   gLumia535PkgTokenSpaceGuid.PcdUefiMemPoolSize|0x03300000
 
   # Default resolution for this firmware can be seen in dec file, override here for specific platform configuration if needed
-  #gLumia535PkgTokenSpaceGuid.PcdMipiFrameBufferWidth|540
-  #gLumia535PkgTokenSpaceGuid.PcdMipiFrameBufferHeight|960
-  #gLumia535PkgTokenSpaceGuid.PcdMipiFrameBufferVisibleWidth|540
-  #gLumia535PkgTokenSpaceGuid.PcdMipiFrameBufferVisibleHeight|960
+  #gLumia535PkgTokenSpaceGuid.PcdMipiFrameBufferWidth|480
+  #gLumia535PkgTokenSpaceGuid.PcdMipiFrameBufferHeight|800
+  #gLumia535PkgTokenSpaceGuid.PcdMipiFrameBufferVisibleWidth|480
+  #gLumia535PkgTokenSpaceGuid.PcdMipiFrameBufferVisibleHeight|800
 
 [PcdsDynamicDefault.common]
   #
   # Set video resolution for boot options and for text setup.
   # PlatformDxe can set the former at runtime.
   #
-  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|540
-  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoVerticalResolution|960
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoHorizontalResolution|540
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoVerticalResolution|960
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutRow|120
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutColumn|50
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|480
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoVerticalResolution|800
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoHorizontalResolution|480
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoVerticalResolution|800
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutRow|60
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutColumn|42
 
   [PcdsPatchableInModule]
    # Console Resolution
-  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|540
-  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoVerticalResolution|960
-  gEfiMdeModulePkgTokenSpaceGuid.PcdConOutColumn|50
-  gEfiMdeModulePkgTokenSpaceGuid.PcdConOutRow|120
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|480
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoVerticalResolution|800
+  gEfiMdeModulePkgTokenSpaceGuid.PcdConOutColumn|42
+  gEfiMdeModulePkgTokenSpaceGuid.PcdConOutRow|60
 
 !include Lumia535Pkg/Shared.dsc.inc
