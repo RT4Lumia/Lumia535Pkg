@@ -26,8 +26,8 @@
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __IRQS_MSM8610_H
-#define __IRQS_MSM8610_H
+#ifndef __IRQS_8960_H
+#define __IRQS_8960_H
 
 /* MSM ACPU Interrupt Numbers */
 
@@ -36,29 +36,26 @@
  * 32+:   SPI (shared peripheral interrupts)
  */
 
-#define GIC_PPI_START                          16
-#define GIC_SPI_START                          32
+#define GIC_PPI_START 16
+#define GIC_SPI_START 32
 
-#define INT_QTMR_NON_SECURE_PHY_TIMER_EXP      (GIC_PPI_START + 3)
-#define INT_QTMR_VIRTUAL_TIMER_EXP             (GIC_PPI_START + 4)
+#define INT_DEBUG_TIMER_EXP     (GIC_PPI_START + 1)
 
-#define INT_QTMR_FRM_0_PHYSICAL_TIMER_EXP      (GIC_SPI_START + 8)
+#define USB1_HS_BAM_IRQ         (GIC_SPI_START + 94)
+#define USB1_HS_IRQ             (GIC_SPI_START + 100)
+#define USB2_IRQ                (GIC_SPI_START + 141)
+#define USB1_IRQ                (GIC_SPI_START + 142)
 
-#define USB1_HS_BAM_IRQ                        (GIC_SPI_START + 135)
-#define USB1_HS_IRQ                            (GIC_SPI_START + 134)
-
-#define SDCC1_PWRCTL_IRQ                       (GIC_SPI_START + 138)
-#define SDCC2_PWRCTL_IRQ                       (GIC_SPI_START + 221)
+#define GSBI_QUP_IRQ(id)       ((id) <= 8 ? (GIC_SPI_START + 145 + 2*((id))) : \
+                                            (GIC_SPI_START + 187 + 2*((id)-8)))
 
 /* Retrofit universal macro names */
-#define INT_USB_HS                             USB1_HS_IRQ
+#define INT_USB_HS                  USB1_HS_IRQ
 
-#define EE0_KRAIT_HLOS_SPMI_PERIPH_IRQ         (GIC_SPI_START + 190)
+#define NR_MSM_IRQS                 256
+#define NR_GPIO_IRQS                173
+#define NR_BOARD_IRQS               0
 
-#define NR_MSM_IRQS                            256
-#define NR_GPIO_IRQS                           173
-#define NR_BOARD_IRQS                          0
+#define NR_IRQS (NR_MSM_IRQS + NR_GPIO_IRQS + NR_BOARD_IRQS)
 
-#define NR_IRQS                                (NR_MSM_IRQS + NR_GPIO_IRQS + \
-                                               NR_BOARD_IRQS)
-#endif	/* __IRQS_MSM8610_H */
+#endif				/* __IRQS_8960_H */
